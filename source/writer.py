@@ -4,7 +4,7 @@ import os.path
 from . import utils
 
 
-def generate_draft_cv(career_story: str, jd: str, model: str) -> str:
+def generate_cv(career_story: str, jd: str, customized_criteria: str, model: str) -> str:
     # Load system message from file
     system_message_path = os.path.join(os.path.dirname(__file__), "..", "prompts", "sys_gen_draft_cv.txt")
     system_message = utils.load_system_message(file_path=system_message_path)
@@ -24,6 +24,7 @@ def generate_draft_cv(career_story: str, jd: str, model: str) -> str:
                 {"role": "user", "content": f"Contact Information: {contact_info}"},
                 {"role": "user", "content": f"Career Story: {career_story}"},
                 {"role": "user", "content": f"Job Description: {jd}"},
+                {"role": "user", "content": f"Customized Criteria to focus: {customized_criteria}"},
 
             ],
         )
@@ -33,3 +34,8 @@ def generate_draft_cv(career_story: str, jd: str, model: str) -> str:
         raise NotImplementedError("Gemini model not implemented yet")
     else:
         raise ValueError(f"Model not supported: {model}")
+
+
+def rewrite_cv():
+    '''rewrite to improve given points in cv'''
+    pass
