@@ -13,7 +13,7 @@ def generate_draft_cv(career_story: str, jd: str, model: str) -> str:
     contact_info_path = os.path.join(os.path.dirname(__file__), "..", "data", "contact_info.txt")
     contact_info = utils.load_contact_info(file_path=contact_info_path)
     
-    if 'gpt' in model:
+    if 'gpt' in model or 'o1' in model:
         client = OpenAI()
 
         completion = client.beta.chat.completions.parse(
@@ -32,4 +32,4 @@ def generate_draft_cv(career_story: str, jd: str, model: str) -> str:
     elif 'gemini' in model:
         raise NotImplementedError("Gemini model not implemented yet")
     else:
-        raise ValueError("Model not supported: {model}")
+        raise ValueError(f"Model not supported: {model}")

@@ -47,7 +47,7 @@ def load_job_description(file_path: str) -> str:
         raise FileNotFoundError(f"Job description file not found at {file_path}")
     
 
-def string_to_html_file(html_content, output_filepath):
+def string_to_html_file(html_string: str, output_filepath):
     """
     Save HTML content string to an HTML file
     
@@ -55,6 +55,7 @@ def string_to_html_file(html_content, output_filepath):
         html_content (str): The HTML content as a string
         output_filepath (str): Path where the HTML file should be saved
     """
+    html_content = extract_html_code_from_string(html_string)
     with open(output_filepath, 'w', encoding='utf-8') as f:
         f.write(html_content)
     
