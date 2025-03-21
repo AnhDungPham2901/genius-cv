@@ -1,36 +1,35 @@
 from google import genai
 from openai import OpenAI
-from pydantic import BaseModel, Field
- 
-class ExperienceSchema(BaseModel):
-    pass
-
-class SummarySchema(BaseModel):
-    pass
-class SkillSchema(BaseModel):
-    skills: list[str] = Field(..., title="List of skills")
-
-class CVOutputSchema(BaseModel):
-    summary: SummarySchema = Field(..., title="Summary of the CV")
-    experience: list[ExperienceSchema] = Field(..., title="List of experiences")
-    skills: SkillSchema = Field(..., title="List of skills")
+import os.path
+from . import utils
 
 
 def generate_draft_cv(career_story: str, jd: str, model: str) -> str:
+    # Load system message from file
+    system_message_path = os.path.join(os.path.dirname(__file__), "..", "prompts", "sys_gen_draft_cv.txt")
+    system_message = utils.load_system_message(file_path=system_message_path)
+    edu_info_path = os.path.join(os.path.dirname(__file__), "..", "data", "edu_info.txt")
+    education_info = utils.load_edu_info(file_path=edu_info_path)
+    contact_info_path = os.path.join(os.path.dirname(__file__), "..", "data", "contact_info.txt")
+    contact_info = utils.load_contact_info(file_path=contact_info_path)
+    
     if 'gpt' in model:
         client = OpenAI()
 
         completion = client.beta.chat.completions.parse(
             model=model,
             messages=[
-                {"role": "system", "content": "Generate a draft CV."},
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": f"Education Information: {education_info}"},
+                {"role": "user", "content": f"Contact Information: {contact_info}"},
                 {"role": "user", "content": f"Career Story: {career_story}"},
                 {"role": "user", "content": f"Job Description: {jd}"},
+
             ],
         )
 
         return completion.choices[0].message.content
     elif 'gemini' in model:
-        client = genai.Client()
+        raise NotImplementedError("Gemini model not implemented yet")
     else:
         raise ValueError("Model not supported: {model}")
