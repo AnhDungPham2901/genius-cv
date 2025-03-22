@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pham Anh Dung - CV</title>
+  <style>
+    /* Screen display */
+    body {
+      padding: 0cm 0.5cm 0.5cm 0.5cm; /* top right bottom left */
+      font-family: "DengXian", "Microsoft YaHei", "SimSun", sans-serif;
+      font-size: 11.5pt; /* Default font size for general content */
+    }
+    
+    /* Print-specific styles */
+    @media print {
+      body {
+        padding: 0cm 0.5cm 0.5cm 0.5cm; /* Ensures consistent padding when printing */
+      }
+      
+      hr.divider {
+        border: none;
+        height: 2px;
+        background-color: black;
+        color: black; /* For older browsers */
+        display: block; /* Ensures visibility in print */
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        -webkit-print-color-adjust: exact; /* Chrome/Safari */
+        print-color-adjust: exact; /* Firefox */
+      }
+      
+      hr.section-divider {
+        border: none;
+        height: 1px;
+        background-color: #999999;
+        color: #999999; /* For older browsers */
+        display: block; /* Ensures visibility in print */
+        width: 100%;
+        margin-top: 0; /* Ensure consistent in print */
+        margin-bottom: 15px;
+        -webkit-print-color-adjust: exact; /* Chrome/Safari */
+        print-color-adjust: exact; /* Firefox */
+      }
+    }
+    
+    /* Contact section styling */
+    .contact-info {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-size: 9pt; /* Contact details */
+    }
+    
+    h1 {
+      margin-bottom: 5px;
+      font-size: 14pt; /* Name size */
+    }
+    
+    h2 {
+      margin-bottom: 2px; /* Reduce space between title and line */
+      font-size: 12.5pt; /* Section headers */
+    }
+    
+    hr.divider {
+      border: none;
+      height: 1.25px;
+      background-color: black;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    
+    hr.section-divider {
+      border: none;
+      height: 0.5px;
+      background-color: #999999;
+      margin-top: 0; /* Remove space above the line */
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    /* Education section styling */
+    .education-item {
+      margin-bottom: 10px;
+    }
+    
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    
+    .education-university {
+      font-weight: bold;
+      margin: 0;
+      font-size: 12pt; /* University names */
+    }
+    
+    .education-date {
+      text-align: right;
+      font-weight: bold;
+      font-size: 12pt; /* Dates */
+    }
+    
+    .education-degree {
+      margin-top: 2px;
+      margin-bottom: 0;
+    }
+
+    /* Job section styling */
+    .job {
+      margin-bottom: 15px;
+    }
+    
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+    
+    .job-title {
+      margin: 0;
+      font-size: 12pt; /* Roles */
+    }
+    
+    .company-name {
+      font-weight: bold;
+      font-size: 12pt; /* Company names */
+    }
+    
+    .job-date {
+      text-align: right;
+      font-weight: bold;
+      font-size: 12pt; /* Dates */
+    }
+
+    /* List item spacing */
+    li {
+      margin-bottom: 8px; /* Add space between bullet points */
+    }
+    
+    li:last-child {
+      margin-bottom: 0; /* Remove margin from last item in each list */
+    }
+    
+    ul {
+      margin-top: 10px; /* Space between header and first bullet */
+    }
+  </style>
+</head>
+<body>
+<div class="contact-section">
+  <h1>Pham Anh Dung</h1>
+  <div class="contact-info">
+    HCMC, Vietnam | dungpham290198@gmail.com | +84 38 4656 114 | <a href="https://www.linkedin.com/in/dungpham290198/">LinkedIn</a> | <a href="https://github.com/AnhDungPham2901">Github</a>
+  </div>
+  <hr class="divider">
+</div>
+
+<div class="education-section">
+  <h2>EDUCATION</h2>
+  <hr class="section-divider">
+  
+  <div class="education-item">
+    <div class="education-header">
+      <p class="education-university">University of Technology Ho Chi Minh City</p>
+      <span class="education-date">Sep 2020 – Apr 2023</span>
+    </div>
+    <p class="education-degree">Master of Engineering in Computer Science</p>
+  </div>
+
+  <div class="education-item">
+    <div class="education-header">
+      <p class="education-university">University of Economics Ho Chi Minh City</p>
+      <span class="education-date">Sep 2016 – Dec 2019</span>
+    </div>
+    <p class="education-degree">Bachelor's Degree in Management Information System</p>
+  </div>
+</div>
+
+<div class="skills-section">
+  <h2>SKILLS</h2>
+  <hr class="section-divider">
+  <ul>
+    <li><strong>Data Science & Analytics:</strong> Statistical Analysis, Churn Analysis, Retention Analysis, Predictive and Prescriptive AI, Data Governance, A/B Testing, Regression Analysis</li>
+    <li><strong>Programming & Tools:</strong> Python (pandas, PyTorch, scikit-learn), SQL, MLFlow, Airflow, Kedro, Data Warehousing (ETL, SSIS), Power BI, Databricks</li>
+    <li><strong>GenAI & NLP:</strong> LLMs, Generative AI solutions, Transformer-based architectures</li>
+    <li><strong>SaaS & FinTech Expertise:</strong> SaaS Metrics, Growth Drivers, Payment/Banking Data, User Behaviour Analytics</li>
+    <li><strong>Collaboration & Leadership:</strong> Cross-Functional Stakeholder Communication, Agile Methodologies, Team Building, Mentorship</li>
+  </ul>
+</div>
+
+<div class="experience-section">
+  <h2>PROFESSIONAL EXPERIENCE</h2>
+  <hr class="section-divider">
+  
+  <!-- Prudential -->
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">Prudential</span> - Data Scientist</p>
+      <span class="job-date">Jun 2019 – Jun 2022</span>
+    </div>
+    <ul>
+      <li><strong>Data Science & Analytics:</strong> Led analyses on retention and churn of insurance agents; performed rapid diagnostics of sales drops, restructuring sales processes that reduced churn by ~10% and increased renewal sales by 15% through targeted interventions.</li>
+      <li><strong>Programming & Tools:</strong> Built predictive models in Python (scikit-learn, PyTorch) to forecast sales using ARIMA and LSTM; developed and optimised ETL pipelines with SSIS, embedding Power BI dashboards for improving access to real-time insights.</li>
+      <li><strong>GenAI & NLP:</strong> Utilised classification models (Random Forest, XGBoost) for customer churn prediction with bank partner data, enhancing predictive accuracy and increasing client retention by 15%.</li>
+      <li><strong>SaaS & FinTech Expertise:</strong> Implemented data-driven strategies for bancassurance products, boosting repeated purchases by 20% through ML-driven cross-selling, affecting product roadmaps significantly.</li>
+      <li><strong>Collaboration & Leadership:</strong> Communicated data-driven insights to CEO and department heads; integrated feedback from product managers to align data strategies with business objectives.</li>
+      <li><strong>Advanced SQL & Data Warehousing:</strong> Innovated complex ETL pipelines to enhance model efficiency, ensuring accuracy for critical organisational measures.</li>
+    </ul>
+  </div>
+
+  <!-- Zalopay -->
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">Zalopay</span> - Senior Data Scientist</p>
+      <span class="job-date">Jun 2022 – Nov 2023</span>
+    </div>
+    <ul>
+      <li><strong>Data Science & Analytics:</strong> Conducted robust user behaviour analytics on large datasets (Pyspark), leading voucher reminder models that improved redemption by 50%, significantly boosting user engagement and transaction volumes.</li>
+      <li><strong>Programming & Tools:</strong> Deployed ML pipelines with Airflow and MLFlow, ensuring end-to-end model oversight amid high app traffic; harnessed AI solutions using PyTorch and scikit-learn to resolve tech constraints.</li>
+      <li><strong>GenAI & NLP:</strong> Established recommendation systems with LightFM that doubled repeat transactions, reversed data integration challenges, significantly raising monthly active users by 30%.</li>
+      <li><strong>SaaS & FinTech Expertise:</strong> Refined user retention strategies for an e-wallet SaaS product, directly impacting product roadmaps and improving customer acquisition by 25%.</li>
+      <li><strong>Communication & Collaboration:</strong> Collaborated with product managers and business leaders to establish communication protocols in model development, heightening strategic alignment and increasing project success rates.</li>
+    </ul>
+  </div>
+
+  <!-- OpusMatch -->
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">OpusMatch</span> - Senior Data Scientist (Part Time)</p>
+      <span class="job-date">Sep 2023 – Aug 2024</span>
+    </div>
+    <ul>
+      <li><strong>Data Science & Analytics:</strong> Developed an AI Assistant with LLMs and generative AI for clinician job matching, improving recruitment engagement by 25%, while tackling data governance issues across recruitment streams.</li>
+      <li><strong>Programming & Tools:</strong> Leveraged LangChain, FastAPI, Redis, and MLFlow to construct resilient ML pipelines, addressing scaling and model versioning hurdles, ensuring deployment agility.</li>
+      <li><strong>GenAI & NLP:</strong> Enacted GPT-based solutions, with prompt protection enhancements to minimise harmful outputs, navigating unexpected model behaviour successfully.</li>
+      <li><strong>Collaboration & Leadership:</strong> Spearheaded architectural design discussions with cross-departmental teams, fostering data-driven project execution and surpassing cross-functional roadblocks.</li>
+    </ul>
+  </div>
+
+  <!-- Unilever -->
+  <div class="job">
+    <div class="job-header">
+      <p class="job-title"><span class="company-name">Unilever Corp</span> - Data Science Lead</p>
+      <span class="job-date">Nov 2023 – Present</span>
+    </div>
+    <ul>
+      <li><strong>Data Science & Analytics:</strong> Spearheaded the “Perfect Stores” initiative with ML modelled to optimise investments, projecting over 30% uplift in gross sales value, with direct implications for strategic growth.</li>
+      <li><strong>Programming & Tools:</strong> Deployed Databricks (Feature Stores, MLFlow) to construct seamless ML pipelines, overcoming deployment complexities using Azure DevOps CI/CD frameworks.</li>
+      <li><strong>GenAI & NLP:</strong> Engineered an LLM-powered system addressing natural language to SQL conversion issues, markedly accelerating insights extraction for multi-disciplinary teams.</li>
+      <li><strong>SaaS & FinTech Expertise:</strong> Created a YOLO and LLMs-based OCR system for promotion data, saving over 30 hours/month in manual labour, enhancing operational efficiency.</li>
+      <li><strong>Communication & Knowledge Sharing:</strong> Delivered AI training initiatives across SEA, engaging product managers to cultivate a research-focused culture, aligning strategic goals productively.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

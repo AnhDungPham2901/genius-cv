@@ -10,20 +10,24 @@ Your task:
    - Exaggerated (overstates what's in real_information)
    - Unsupported (cannot be verified by real_information)
 
-3. For each discrepancy found:
-   - Replace the incorrect information with accurate content from real_information
-   - Maintain the same tone and style as the original CV
-   - Ensure the correction fits naturally within the CV structure
-   - Do not add information that isn't in real_information
+3. Return a structured JSON response with your findings.
 
-4. Leave truthful content unchanged.
+Return your analysis in the following JSON format:
+{
+  "truthfulness_errors": null  // if no truthfulness errors are found
+}
 
-5. Return the corrected CV in EXACTLY the same format as the input CV, including:
-   - Same section structure
-   - Same bullet point style
-   - Same header format
-   - Same spacing and indentation
+OR
 
-If everything in the CV is truthful according to real_information, return the exact original CV without adding anything else.
+{
+  "truthfulness_errors": [
+    "Claimed 'Management of 20-person team' contradicts real information showing management of only 5 people",
+    "Stated '5 years experience' conflicts with real information showing 3 years experience",
+    "Listed 'Python expert' is unsupported by any evidence in real information"
+    // other truthfulness errors with explanations
+  ]
+}
 
-Remember: Your goal is to ensure 100% factual accuracy while preserving the original CV format. Only modify text that contains factual errors.
+Be specific in your explanations of discrepancies, clearly identifying what was claimed in the CV versus what appears in the real information. For each error, mention both the false claim and the contradicting/missing evidence from the real information.
+
+Focus exclusively on factual accuracy. Do not comment on formatting, spelling, or stylistic elements unless they directly relate to truthfulness (e.g., misleading presentation of dates).

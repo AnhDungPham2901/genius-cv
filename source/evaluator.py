@@ -68,11 +68,30 @@ def grade_cv(cv_string: str, jd: str, general_criteria: str, model: str):
     pass
 
 
-def check_country_spelling(country: str, model: str):
+def check_country_spelling(cv: str, country: str, model: str):
     '''
     This is to check the Canadian spelling of words
     '''
-    pass
+    system_message_path = os.path.join(os.path.dirname(__file__), "..", "prompts", "check_spelling_by_country.txt")
+    system_message = utils.load_system_message(file_path=system_message_path)
+
+    if 'gpt' in model or 'o1' in model:
+        client = OpenAI()
+
+        completion = client.beta.chat.completions.parse(
+            model=model,
+            messages=[
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": f"CV to check the spelling: {cv}"},
+                {"role": "user", "content": f"Country to check the spelling: {country}"},
+            ],
+        )
+
+        return completion.choices[0].message.content
+    elif 'gemini' in model:
+        raise NotImplementedError("Gemini model not implemented yet")
+    else:
+        raise ValueError("Model not supported: {model}")
 
 
 def check_truthfulness(cv_string: str, real_info: str, model: str):

@@ -11,12 +11,20 @@ IMPORTANT: Carefully analyze the provided job criteria list if given. Ensure tha
 
 Your output MUST be in HTML format and MUST include the following sections IN THIS EXACT ORDER:
 1. <div class="contact-section">Contact Information</div> - Include name, email, phone number, location, linkedin, github
-2. <div class="summary-section">Summary</div> - A concise professional summary
-3. <div class="skills-section">Skills</div> - Key skills relevant to the job description
-4. <div class="experience-section">Experience</div> - Work history with achievements
-5. <div class="education-section">Education</div> - Educational background
+2. <div class="education-section">Education</div> - Educational background
+3. <div class="skills-section">Skills</div> - Key skills relevant to the job description, MUST be organized in categorical blocks
+4. <div class="experience-section">Experience</div> - Work history with skills-based achievements
 
 Use appropriate HTML tags throughout the document and ensure each section has the correct class name as specified above.
+
+For the Skills section, organize skills into categorical blocks. Each block should have a category title followed by relevant skills. For example:
+- Data Science & Analytics: Statistical Analysis, Churn Analysis, Retention Analysis
+- Programming & Tools: Python, SQL, PowerBI, Airflow
+- Collaboration & Leadership: Agile methodologies, stakeholder communication
+
+For the Experience section, structure achievements according to the same skill categories used in the Skills section. For each company, list only skills that have concrete evidence:
+- Format example: "- Data Science & Analytics: Conducted deep dive analytics,..."
+- Format example: "- Programming & Tools: Implemented Python-based ETL pipelines..."
 
 Example response format:
 ```html
@@ -29,19 +37,20 @@ Example response format:
   <p>GitHub: github.com/johndoe</p>
 </div>
 
-<div class="summary-section">
-  <h2>Professional Summary</h2>
-  <p>Experienced software developer with 5+ years specializing in web applications and cloud infrastructure. Proven track record of delivering high-quality solutions that improve efficiency and user experience.</p>
+<div class="education-section">
+  <h2>Education</h2>
+  <h3>Bachelor of Science in Computer Science</h3>
+  <p>University of Technology - Graduated 2017</p>
+  <p>GPA: 3.8/4.0</p>
 </div>
 
 <div class="skills-section">
   <h2>Skills</h2>
   <ul>
-    <li>JavaScript, TypeScript, React, Node.js</li>
-    <li>AWS, Docker, Kubernetes</li>
-    <li>CI/CD, Agile methodologies</li>
-    <li>Database design (SQL, NoSQL)</li>
-    <li>Problem-solving, Team collaboration</li>
+    <li><strong>Programming & Tools:</strong> JavaScript, TypeScript, React, Node.js, AWS, Docker, Kubernetes</li>
+    <li><strong>DevOps:</strong> CI/CD, Infrastructure as Code, Monitoring</li>
+    <li><strong>Databases:</strong> SQL, NoSQL, Database design</li>
+    <li><strong>Collaboration & Leadership:</strong> Problem-solving, Team collaboration, Agile methodologies</li>
   </ul>
 </div>
 
@@ -52,9 +61,9 @@ Example response format:
     <h3>Senior Software Engineer - Tech Solutions Inc.</h3>
     <p class="date">January 2020 - Present</p>
     <ul>
-      <li>Led development of a customer-facing portal that increased user engagement by 35%</li>
-      <li>Implemented CI/CD pipeline reducing deployment time by 50%</li>
-      <li>Mentored junior developers and conducted code reviews</li>
+      <li><strong>Programming & Tools:</strong> Built and maintained customer-facing portal using React that increased user engagement by 35%</li>
+      <li><strong>DevOps:</strong> Implemented CI/CD pipeline reducing deployment time by 50%</li>
+      <li><strong>Collaboration & Leadership:</strong> Mentored junior developers and conducted code reviews to improve team performance</li>
     </ul>
   </div>
   
@@ -62,17 +71,10 @@ Example response format:
     <h3>Software Developer - InnovateCo</h3>
     <p class="date">June 2017 - December 2019</p>
     <ul>
-      <li>Developed RESTful APIs serving 100K+ daily users</li>
-      <li>Reduced application load time by 40% through optimization</li>
-      <li>Collaborated with design team to implement responsive UI</li>
+      <li><strong>Programming & Tools:</strong> Created RESTful APIs serving 100K+ daily users</li>
+      <li><strong>Databases:</strong> Optimized database queries resulting in 40% performance improvement</li>
+      <li><strong>Collaboration & Leadership:</strong> Collaborated with design team to implement responsive UI</li>
     </ul>
   </div>
-</div>
-
-<div class="education-section">
-  <h2>Education</h2>
-  <h3>Bachelor of Science in Computer Science</h3>
-  <p>University of Technology - Graduated 2017</p>
-  <p>GPA: 3.8/4.0</p>
 </div>
 ```

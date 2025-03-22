@@ -18,8 +18,8 @@ OR
 
 {
   "missing": [
-    "Criterion 1 is not met because...",
-    "Criterion 2 is not met because...",
+    "Criterion about strategic planning is not met because...",
+    "Criterion about leadership experience is not met because...",
     // other missing criteria with explanations
   ]
 }

@@ -36,6 +36,32 @@ def generate_cv(career_story: str, jd: str, customized_criteria: str, model: str
         raise ValueError(f"Model not supported: {model}")
 
 
-def rewrite_cv():
-    '''rewrite to improve given points in cv'''
-    pass
+def rewrite_cv(cv: str, career_story: str, improvement_points: str, model: str) -> str:
+    '''rewrite to improve given points in cv
+    The improvment points can be
+     - spelling mistakes
+     - truthfulness
+     - missing information
+    '''
+    system_message_path = os.path.join(os.path.dirname(__file__), "..", "prompts", "rewrite_cv.txt")
+    system_message = utils.load_system_message(file_path=system_message_path)
+
+    if 'gpt' in model or 'o1' in model:
+        client = OpenAI()
+
+        completion = client.beta.chat.completions.parse(
+            model=model,
+            messages=[
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": f"CV to improve: {cv}"},
+                {"role": "user", "content": f"Career Story: {career_story}"},
+                {"role": "user", "content": f"Improvement Points: {improvement_points}"},
+            ],
+        )
+
+        return completion.choices[0].message.content
+    elif 'gemini' in model:
+        raise NotImplementedError("Gemini model not implemented yet")
+    else:
+        raise ValueError("Model not supported: {model}")
+    
